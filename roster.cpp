@@ -18,3 +18,66 @@ void Roster::printAll() {
         classRosterArray[i]->print();
     }
 }
+
+void Roster::remove(string studentID) {
+    bool found = false;
+
+    for (int i = 0; i <= lastIndex; i++) {
+        if (classRosterArray[i]->getStudentID() == studentID) {
+            found = true;
+
+            delete classRosterArray[i];
+
+            for (int j = i; j < lastIndex; j++) {
+                classRosterArray[j] = classRosterArray[j + 1];
+            }
+
+            lastIndex--;
+            break;
+        }
+    }
+
+    if (!found) {
+        cout << "Student with ID " << studentID << " not found.\n";
+    }
+}
+
+void Roster::printAverageDaysInCourse(string studentID) {
+    for (int i = 0; i <= lastIndex; i++) {
+        if (classRosterArray[i]->getStudentID() == studentID) {
+
+            int* days = classRosterArray[i]->getDaysInCourse();
+            int avg = (days[0] + days[1] + days[2]) / 3;
+
+            cout << "Student ID: " << studentID
+                << ", Average Days: " << avg << endl;
+        }
+    }
+}
+
+void Roster::printInvalidEmails() {
+    for (int i = 0; i <= lastIndex; i++) {
+        string email = classRosterArray[i]->getEmail();
+
+        if (email.find("@") == string::npos ||
+            email.find(".") == string::npos ||
+            email.find(" ") != string::npos) {
+
+            cout << email << " is invalid.\n";
+        }
+    }
+}
+
+void Roster::printByDegreeProgram(DegreeProgram dp) {
+    for (int i = 0; i <= lastIndex; i++) {
+        if (classRosterArray[i]->getDegreeProgram() == dp) {
+            classRosterArray[i]->print();
+        }
+    }
+}
+
+Roster::~Roster() {
+    for (int i = 0; i <= lastIndex; i++) {
+        delete classRosterArray[i];
+    }
+}
