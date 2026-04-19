@@ -64,6 +64,7 @@ void Roster::printInvalidEmails() {
             email.find(" ") != string::npos) {
 
             cout << email << " is invalid.\n";
+
         }
     }
 }

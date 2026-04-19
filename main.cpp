@@ -5,7 +5,7 @@ using namespace std;
 int main() {
 
     const string studentData[] = {
-        "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
+       "A1,John,Smith,John1989@gmail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
         "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
@@ -14,8 +14,8 @@ int main() {
 
     cout << "Course: C867 - Scripting and Programming\n";
     cout << "Language: C++\n";
-    cout << "Student ID: YOUR_ID\n";
-    cout << "Name: YOUR NAME\n\n";
+    cout << "Student ID: 012413536\n";
+    cout << "Name: Braeten Anders\n\n";
 
     Roster classRoster;
 
