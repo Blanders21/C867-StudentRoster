@@ -42,6 +42,12 @@ void Student::setDegreeProgram(DegreeProgram dp) { degreeProgram = dp; }
 
 // Print function
 void Student::print() {
+    string degreeStr;
+
+    if (degreeProgram == SECURITY) degreeStr = "SECURITY";
+    else if (degreeProgram == NETWORK) degreeStr = "NETWORK";
+    else degreeStr = "SOFTWARE";
+
     cout << studentID << "\t"
         << "First Name: " << firstName << "\t"
         << "Last Name: " << lastName << "\t"
@@ -50,5 +56,5 @@ void Student::print() {
         << "Days: {" << daysInCourse[0] << ", "
         << daysInCourse[1] << ", "
         << daysInCourse[2] << "} "
-        << "Degree: " << degreeProgram << endl;
+        << "Degree: " << degreeStr << endl;
 }
